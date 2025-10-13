@@ -1,0 +1,54 @@
+.language-btn {
+  width: 120px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.language-btn:hover {
+  transform: scale(1.05);
+}
+.language-btn.active {
+  background-color: #08a88b; /* Bootstrap primary */
+  color: white;
+}
+.day-btn {
+  width: 100px;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+.day-btn:hover {
+  transform: scale(1.05);
+}
+.weather-card {
+  max-width: 350px;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  background: #f8f9fa; /* light gray */
+}
+.weather-card img {
+  width: 100px;
+  height: 100px;
+}
+.weather-card h5 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.container {
+  text-align: center;
+  padding: 20px;
+}
+h2 {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+p.text-muted {
+  font-size: 14px;
+  margin-top: 10px;
+}
+body {
+  background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+}
