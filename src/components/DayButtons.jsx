@@ -1,20 +1,34 @@
 import React from "react";
 
-export default function DayButtons({ data, language, onClick }) {
+export default function DayButtons({ data, onClick, activeDay }) {
   const today = data[0];
   const tomorrow = data[1];
   const dayafter = data[2];
 
+  const btnClass = (label) =>
+    `day-btn ${activeDay === label ? "day-btn-active" : ""}`;
+
   return (
-    <div className="d-flex justify-content-center gap-2 mt-3">
-      <button className="btn btn-primary" onClick={() => onClick(today, "today")}>
-        {language === "en" ? "Today" : "ఈ రోజు"}
+    <div className="d-flex justify-content-center gap-3 mt-3 day-buttons-row">
+      <button
+        className={btnClass("today")}
+        onClick={() => onClick(today, "today")}
+      >
+        ఈ రోజు
       </button>
-      <button className="btn btn-primary" onClick={() => onClick(tomorrow, "tomorrow")}>
-        {language === "en" ? "Tomorrow" : "రేపు"}
+
+      <button
+        className={btnClass("tomorrow")}
+        onClick={() => onClick(tomorrow, "tomorrow")}
+      >
+        రేపు
       </button>
-      <button className="btn btn-primary" onClick={() => onClick(dayafter, "dayafter")}>
-        {language === "en" ? "Day After" : "నేపటి తర్వాత"}
+
+      <button
+        className={btnClass("dayafter")}
+        onClick={() => onClick(dayafter, "dayafter")}
+      >
+        నేటి తర్వాత
       </button>
     </div>
   );

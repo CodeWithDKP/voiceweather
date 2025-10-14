@@ -1,54 +1,184 @@
-.language-btn {
-  width: 120px;
-  font-weight: 500;
-  transition: all 0.3s ease;
+/* 🌤️ Voice Weather Telugu UI (Modern & Responsive) */
+
+/* Color Palette */
+:root {
+  --primary: #0b5ed7;
+  --accent: #1abc9c;
+  --text-light: #ffffff;
+  --text-dark: #1c1c1c;
+  --bg-gradient: linear-gradient(180deg, #dff6ff 0%, #ffffff 100%);
+  --card-glass: rgba(255, 255, 255, 0.25);
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
-.language-btn:hover {
-  transform: scale(1.05);
+
+/* Page Base */
+body,
+html,
+#root {
+  height: 100%;
+  margin: 0;
+  font-family: "Noto Sans Telugu", "Segoe UI", sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-dark);
 }
-.language-btn.active {
-  background-color: #08a88b; /* Bootstrap primary */
-  color: white;
+
+/* Centered layout */
+.app-root {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
 }
-.day-btn {
-  width: 100px;
-  font-weight: 500;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-.day-btn:hover {
-  transform: scale(1.05);
-}
-.weather-card {
-  max-width: 350px;
-  margin: 20px auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  padding: 20px;
-  background: #f8f9fa; /* light gray */
-}
-.weather-card img {
-  width: 100px;
-  height: 100px;
-}
-.weather-card h5 {
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-.container {
+
+/* Container */
+.main-container {
+  width: 100%;
+  max-width: 430px;
+  background: transparent;
   text-align: center;
-  padding: 20px;
+  padding: 16px;
 }
-h2 {
+
+/* Title */
+.app-title {
+  font-weight: 800;
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  color: var(--primary);
+  letter-spacing: 0.5px;
+}
+
+/* 🌤 Day Buttons */
+.day-buttons-row {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.day-btn {
+  flex: 1 1 100px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid rgba(13, 110, 253, 0.15);
+  box-shadow: var(--shadow);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary);
+  transition: all 0.25s ease;
+}
+
+.day-btn:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.day-btn-active {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(26, 188, 156, 0.25);
+}
+
+/* 🌦 Weather Card */
+.weather-card {
+  position: relative;
+  margin: 22px auto;
+  border-radius: 16px;
+  overflow: hidden;
+  height: 230px;
+  box-shadow: var(--shadow);
+  background: var(--card-glass);
+  backdrop-filter: blur(10px);
+}
+
+/* Background video */
+.weather-card .bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.65) saturate(1.1);
+}
+
+/* Content Layer */
+.weather-content {
+  position: relative;
+  z-index: 2;
+  color: var(--text-light);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 14px;
+}
+
+/* Village name */
+.village-name {
+  font-size: 1.15rem;
   font-weight: 700;
-  margin-bottom: 20px;
+  color: #fff;
+  margin: 0;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
 }
-p.text-muted {
-  font-size: 14px;
+
+/* Weather Info */
+.weather-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   margin-top: 10px;
 }
-body {
-  background: linear-gradient(to bottom, #e0f7fa, #ffffff);
-  min-height: 100vh;
-  font-family: "Segoe UI", sans-serif;
+
+.weather-icon {
+  width: 80px;
+  height: 80px;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.35));
+}
+
+.weather-text {
+  text-align: left;
+}
+
+.weather-desc {
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.weather-temp {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-top: 3px;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
+}
+
+/* Helper note */
+.telugu-note {
+  font-size: 0.95rem;
+  color: #6c757d;
+  margin-top: 12px;
+}
+
+/* 🌐 Responsive tweaks */
+@media (max-width: 480px) {
+  .app-title {
+    font-size: 1.4rem;
+  }
+  .day-btn {
+    flex: 1 1 90px;
+    font-size: 0.95rem;
+  }
+  .weather-card {
+    height: 200px;
+  }
+  .weather-temp {
+    font-size: 1.4rem;
+  }
 }
