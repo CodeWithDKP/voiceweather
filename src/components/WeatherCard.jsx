@@ -29,8 +29,7 @@ export default function WeatherCard({ weather }) {
       )}
 
       <div className="weather-content">
-        <h3 className="village-name">బెతపల్లి</h3>
-
+        
         <div className="weather-main">
           <img
             src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`}
