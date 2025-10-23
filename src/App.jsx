@@ -86,6 +86,7 @@ function App() {
   if (!data.length) return <p className="text-center mt-5">లోడ్ అవుతోంది...</p>;
 
   return (
+   <>
     <div className="app-root">
       <div className="container text-center main-container">
         <h2 className="app-title">🌦️ {locationName} వాతావరణం</h2>
@@ -98,7 +99,12 @@ function App() {
           వాతావరణం వినడానికి బటన్ నొక్కండి.
         </p>
       </div>
+    
     </div>
+     <div className="container text-center main-container">
+       <MobileNotificationTest />
+     </div>
+   </>
   );
 }
 
