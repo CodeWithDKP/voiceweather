@@ -3,6 +3,7 @@ import { fetchWeather } from "./services/fetchWeather";
 import { playTeluguWeather } from "./services/playTeluguAudio";
 import DayButtons from "./components/DayButtons";
 import WeatherCard from "./components/WeatherCard";
+import MobileNotificationTest from "./components/MobileNotificationTest";
 
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
