@@ -1,6 +1,6 @@
 // MobileNotificationTest.jsx
 import React, { useState } from "react";
-import samepleAudio from "../assets/dayafter_rain.m4a";
+
 
 const MobileNotificationTest = () => {
   const [permission, setPermission] = useState(Notification.permission);
@@ -29,9 +29,7 @@ const MobileNotificationTest = () => {
       icon: "/weather-icon.png", // optional
     });
 
-    // 2️⃣ Play pre-recorded audio
-    const audio = new Audio(samepleAudio);
-    audio.play();
+    
   };
 
   return (
@@ -48,7 +46,7 @@ const MobileNotificationTest = () => {
         onClick={sendTestNotification}
         style={{ padding: "10px", margin: "10px" }}
       >
-        Send Test Notification + Audio
+        Send Test Notification
       </button>
     </div>
   );
